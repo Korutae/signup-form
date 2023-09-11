@@ -1,7 +1,7 @@
 import Authenticate from "./components/Authenticate"
 import SignUpForm from "./components/SignUpForm"
 
-function App() {
+export default function App() {
   return (
     <>
       <Authenticate/>
@@ -10,4 +10,4 @@ function App() {
   )
 }
 
-export default App
+

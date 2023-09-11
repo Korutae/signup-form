@@ -1,28 +1,44 @@
 import { useState } from 'react';
 
-const Form = ( ) => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState(null);
-}
 
-export default function SignUpForm() {
+export default function SignUpForm(){
 
-    return <h2>
-        Sign Up!
-        <form onSubmit={handleSubmit}>
-            <label>
-                Username: <input value={Form.username} onChange={(e) => Form.setUsername(e.target.value)}/>
-            </label>
-            <label>
-                Password: <input value={Form.password} onChange={(e) => Form.setPassword(e.target.value)}/>
-            </label>
-            <button>Submit</button>
-        </form>
-    </h2>;
-}
+        const [username, setUsername] = useState("");
+        const [password, setPassword] = useState("");
+        const [error, setError] = useState(null);
 
-async function handleSubmit(event) {
-    event.preventDefault();
-    console.log("hi there");
-}
+        async function handleSubmit(event) {
+            event.preventDefault();
+            console.log(username);
+        }
+
+
+        return <h2>
+            Sign Up!
+            <form method ="post" onSubmit={handleSubmit}>
+                <label>
+                    Username: <input name="username"
+                    value={username}
+                    onChange={(e) => { 
+                        setUsername(e.target.value)
+                        console.log(username)
+                    }}/>
+
+                </label>
+                <label>
+                    Password: <input name="password" 
+                    value={password} 
+                    onChange={(e) => {
+                    setPassword(e.target.value)
+                    console.log(password)
+                    }}/>
+                </label>
+                <button>Submit</button>
+            </form>
+        </h2>;
+    }
+
+
+
+
+
